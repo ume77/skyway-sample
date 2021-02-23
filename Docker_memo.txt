@@ -1,0 +1,65 @@
+docker run -p 9001:9001 -it -d --name my-ubuntu ubuntu:18.04
+docker ps
+docker exec -it my-ubuntu /bin/bash
+
+apt update
+apt upgrade -y
+
+# https://qiita.com/apollo_program/items/2495a109ce7afec21f25
+
+apt install tzdata -y
+
+apt install net-tools -y
+apt install nodejs -y
+apt install npm -y
+npm -g i yarn
+
+# https://discuss.px4.io/t/ubuntu-18-04-gstreamer-cant-be-installed-so-gazebo-video-steaming-doesnt-work/10161/10
+# http://lifestyletransfer.com/how-to-install-gstreamer-on-ubuntu/
+
+apt install pkg-config -y
+
+apt install libgstreamer1.0-0 gstreamer1.0-dev gstreamer1.0-tools gstreamer1.0-doc -y
+apt install gstreamer1.0-plugins-base gstreamer1.0-plugins-good -y
+apt install gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly -y
+apt install gstreamer1.0-libav -y
+apt install gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio -y
+apt install libopencv-dev -y
+
+apt install libgstreamer-plugins-base1.0-dev -y
+
+apt install -y yasm
+
+apt install -y git
+apt install -y wget
+apt install -y sudo
+
+useradd -s /bin/bash -m user
+passwd user
+gpasswd -a user sudo
+
+login user
+
+wget https://github.com/skyway/skyway-webrtc-gateway/releases/download/0.3.2/gateway_linux_x64
+sudo mv ./gateway_linux_x64 /usr/local/bin
+chmod +x /usr/local/bin/gateway_linux_x64
+
+gateway_linux_x64
+
+git clone https://github.com/rtc-iot-tech/node-skyway-rtcgw-lib.git
+cd node-skyway-rtcgw-lib
+yarn install
+
+sudo apt install -y vim
+
+node example/index.js
+
+# Create a new image from a containerÅfs changes
+docker container commit 86d72eccad2e skyway-sample:1.00
+
+docker run -p 9001:9001 -it -d --name skyway-sample skyway-sample:1.00
+docker ps
+docker exec -it skyway-sample /bin/bash
+
+https://localhost:9001
+
