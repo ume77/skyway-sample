@@ -40,12 +40,14 @@ gpasswd -a user sudo
 
 login user
 
+# https://github.com/skyway/skyway-webrtc-gateway
 wget https://github.com/skyway/skyway-webrtc-gateway/releases/download/0.3.2/gateway_linux_x64
 sudo mv ./gateway_linux_x64 /usr/local/bin
 chmod +x /usr/local/bin/gateway_linux_x64
 
 gateway_linux_x64
 
+# https://github.com/rtc-iot-tech/node-skyway-rtcgw-lib
 git clone https://github.com/rtc-iot-tech/node-skyway-rtcgw-lib.git
 cd node-skyway-rtcgw-lib
 yarn install
