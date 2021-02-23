@@ -52,9 +52,9 @@ yarn install
 
 sudo apt install -y vim
 
-node example/index.js
+node examples/index.js
 
-# Create a new image from a containerÅfs changes
+# Create a new image from a container fs changes
 docker container commit 86d72eccad2e skyway-sample:1.00
 
 docker run -p 9001:9001 -it -d --name skyway-sample skyway-sample:1.00
