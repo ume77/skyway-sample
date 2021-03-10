@@ -215,16 +215,16 @@ sh ./run.sh
 ```
 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/libpython3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb  Connection failed [IP: ***.***.***.*** ****]
 ```
-対処法
+対処法(1)
 ```
 apt-get update
 apt-get upgrade
 ```
-または
+対処法(2)
 ```
 apt --fix-broken install
 ```
-または
+対処法(3)
 ```
 wget http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/libpython3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb
 dpkg -i libpython3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb
