@@ -38,7 +38,7 @@ apt install -y nodejs
 apt install -y build-essential
 ```
 
-### npmのproxyのインストールとproxy設定
+### npmのインストールとproxy設定
 ```
 apt install -y npm
 npm -g config set proxy http://<host>:<port>
