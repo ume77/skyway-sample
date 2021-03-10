@@ -148,7 +148,7 @@ docker exec -u user -w /home/user -it <conatiner-name> bash
 ```
 vi ~/.bashrc
 ```
-(最後の行に追加)
+(以下を最後の行に追加)
 ```
 export HTTP_PROXY="http://<host>:<port>/"
 export HTTPS_PROXY="http://<host>:<port>/"
