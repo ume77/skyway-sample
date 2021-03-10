@@ -145,13 +145,19 @@ docker exec -u user -w /home/user -it <conatiner-name> bash
 ```
 
 ### ~/.bashrcを編集
-(最後の行に追加)
 ```
 vi ~/.bashrc
+```
+(最後の行に追加)
+```
 export HTTP_PROXY="http://<host>:<port>/"
 export HTTPS_PROXY="http://<host>:<port>/"
 export http_proxy="http://<host>:<port>/"
 export https_proxy="http://<host>:<port>/"
+```
+
+### ~/.bashrcを反映
+```
 source ~/.bashrc
 ```
 
@@ -170,6 +176,7 @@ unzip analyze-server.zip
 cd ~
 mv analyze-server/home/node-skyway-rtcgw-lib .
 mv analyze-server/home/*.sh .
+```
 
 ### node_module.zipを解凍
 ```
