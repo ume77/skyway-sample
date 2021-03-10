@@ -93,7 +93,7 @@ apt install -y unzip
 ```
 apt install -y wget
 ```
-(コメントアウトされているので、有効にして編集)
+コメントアウトされているので、有効にして編集
 ```
 vi /etc/wgetrc
 https_proxy = http://<host>:<port>/
@@ -148,7 +148,7 @@ docker exec -u user -w /home/user -it <conatiner-name> bash
 ```
 vi ~/.bashrc
 ```
-(以下を最後の行に追加)
+以下を最後の行に追加
 ```
 export HTTP_PROXY="http://<host>:<port>/"
 export HTTPS_PROXY="http://<host>:<port>/"
@@ -187,7 +187,6 @@ unzip node_modules.zip
 ### API KEYを書き換える
 ```
 vi config.js
-
 ```
 ```js
 api_key: '<Skywayで登録したAPIキー>'
