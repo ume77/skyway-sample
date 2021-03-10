@@ -46,13 +46,9 @@ npm -g config set https-proxy http://<host>:<port>
 npm -g config set registry http://registry.npmjs.org/
 ```
 
-### yarnのインストール
+### yarnのインストールとproxy設定
 ```
 npm -g i yarn
-```
-
-### yarnのproxy設定
-```
 yarn config set proxy http://<host>:<port> -g
 yarn config set https-proxy http://<host>:<port> -g
 ```
@@ -214,3 +210,22 @@ docker exec -u user -w /home/user -it <new-conatiner-name> bash
 sh ./run.sh
 ```
 
+### ★エラーとその対処法
+エラー内容
+```
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/libpython3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb  Connection failed [IP: ***.***.***.*** ****]
+```
+対処法
+```
+apt-get update
+apt-get upgrade
+```
+または
+```
+apt --fix-broken install
+```
+または
+```
+wget http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/libpython3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb
+dpkg -i libpython3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb
+```
